@@ -1,6 +1,7 @@
 package pe.edu.tecsup.guerra.labcalificado2.Repository;
 
 import com.orm.SugarRecord;
+import com.orm.util.NamingHelper;
 
 import java.util.List;
 
@@ -42,11 +43,11 @@ public class UserRepository {
     }
 
     public static boolean  validar(String username, String password){
-        //List<User> userList= SugarRecord.findWithQuery(User.class,"Select * from User where username = ?",username);
+        List<User> userList= SugarRecord.findWithQuery(User.class,"Select * from "+ NamingHelper.toSQLName(User.class)+ " where username = ?",username);
+        //all and find
+        //List<User> lol = SugarRecord.find(User.class,"username=?",username);
 
-        List<User> lol = SugarRecord.find(User.class,"username=?",username);
-
-        if (lol.isEmpty()||lol==null){
+        if (userList.isEmpty()||userList==null){
             return true;
         }else{
             return false;

@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:textSize="15sp"
-        android:text="@string/register_password"/>
+        android:text="@string/username_login"/>
 
     <EditText
         android:id="@+id/username_input"
