@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">LabCalificado2</string>
+
+    <string name="register_fullname">ingresar nombres completos</string>
+    <string name="register_email">Ingresar email</string>
+    <string name="register_password">Ingresar password</string>
+    <string name="register_save">Registrar</string>
+    <string name="username_save">Ingrese Username</string>
+
+
+    <string name="nuevo_usuario">Crear usuario</string>
+    <string name="login">Login</string>
+    <string name="username_login">Username</string>
+    <string name="password_login">Password</string>
+
 </resources>
