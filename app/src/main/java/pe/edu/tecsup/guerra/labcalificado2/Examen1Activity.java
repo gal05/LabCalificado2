@@ -32,10 +32,13 @@ public class Examen1Activity extends AppCompatActivity {
         boolean val = UserRepository.validar(usern,pass);
 
         if (val==true){
-
-        }else{
-            Toast.makeText(this, "Error :v ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "User vacio >:(", Toast.LENGTH_SHORT).show();
             return;
+        }else{
+            Toast.makeText(this, "DAmn this", Toast.LENGTH_SHORT).show();
+            return;
+            /*Toast.makeText(this, "Error :v ", Toast.LENGTH_SHORT).show();
+            return;*/
         }
 
     }

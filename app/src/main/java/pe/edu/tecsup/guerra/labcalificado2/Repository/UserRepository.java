@@ -46,7 +46,7 @@ public class UserRepository {
 
         List<User> lol = SugarRecord.find(User.class,"username=?",username);
 
-        if (password.equals(lol.get[0][0].getPassword())){
+        if (lol.isEmpty()||lol==null){
             return true;
         }else{
             return false;
