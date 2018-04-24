@@ -32,6 +32,7 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Examen1Activity"></activity>
+        <activity android:name=".Examen2Activity"></activity>
     </application>
 
 </manifest>

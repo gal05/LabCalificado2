@@ -1,13 +1,21 @@
 package pe.edu.tecsup.guerra.labcalificado2;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import pe.edu.tecsup.guerra.labcalificado2.Repository.UserRepository;
+import pe.edu.tecsup.guerra.labcalificado2.clases.User;
 
 public class Examen1Activity extends AppCompatActivity {
     private EditText username;
@@ -23,25 +31,28 @@ public class Examen1Activity extends AppCompatActivity {
 
 
     public void validate_user(View view){
-        String usern = username.getText().toString();
+        final String usern = username.getText().toString();
         String pass = password.getText().toString();
+
+
+        List<User> user_val = UserRepository.validar();
+
+        User encontrado=UserRepository.find(user_val,usern);
+
+
+
         if(usern.isEmpty() || pass.isEmpty() ){
             Toast.makeText(this, "debes completar los campos!", Toast.LENGTH_SHORT).show();
             return;
         }
-        boolean val = UserRepository.validar(usern,pass);
-
-        if (val==true){
-            Toast.makeText(this, "User vacio >:(", Toast.LENGTH_SHORT).show();
+        if (encontrado==null){
+            Toast.makeText(this, "Error en las credenciales"+encontrado, Toast.LENGTH_SHORT).show();
             return;
         }else{
-            Toast.makeText(this, "DAmn this", Toast.LENGTH_SHORT).show();
-            return;
-            /*Toast.makeText(this, "Error :v ", Toast.LENGTH_SHORT).show();
-            return;*/
+            startActivity(new Intent(this, Examen2Activity.class));
+            finish();
         }
-
-    }
+   }
 
 
     public void new_user(View view){

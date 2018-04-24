@@ -42,16 +42,24 @@ public class UserRepository {
         SugarRecord.delete(user);
     }
 
-    public static boolean  validar(String username, String password){
-        List<User> userList= SugarRecord.findWithQuery(User.class,"Select * from "+ NamingHelper.toSQLName(User.class)+ " where username = ?",username);
+    public static List<User>validar(){
+        //List<User> userList= SugarRecord.findWithQuery(User.class,"Select * from "+ NamingHelper.toSQLName(User.class)+ " where username = ?",username);
         //all and find
         //List<User> lol = SugarRecord.find(User.class,"username=?",username);
 
-        if (userList.isEmpty()||userList==null){
-            return true;
-        }else{
-            return false;
-        }
+        List<User> users = SugarRecord.listAll(User.class);
+        return users;
     }
+
+    public static User find(List<User>users,String username){
+        for(User user:users){
+            if (username.equals(user.getUnsername())){
+                return user;
+            }
+        }
+        return null;
+
+    }
+
 
 }
