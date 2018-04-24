@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pe.edu.tecsup.guerra.labcalificado2.MainActivity"
+    tools:context="pe.edu.tecsup.guerra.labcalificado2.RegisterProductActivity"
     android:layout_margin="16dp">
 
     <android.support.v7.widget.RecyclerView
@@ -14,18 +14,19 @@
         android:layout_height="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="22dp"
         android:clickable="true"
-        android:onClick="callRegisterForm"
-        android:layout_
+        android:onClick="callRegisterProductForm"
+        app:backgroundTint="@android:color/transparent"
         app:fabSize="normal"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@drawable/ic_anadir"
+        tools:ignore="OnClick" />
 
 
-
-</LinearLayout>
+</RelativeLayout>

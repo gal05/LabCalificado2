@@ -13,4 +13,10 @@
     <string name="username_login">Username</string>
     <string name="password_login">Password</string>
 
+
+    <string name="ingrese_nombre_p">Ingrese Nombre Producto</string>
+    <string name="ingrese_precio_p">Ingrese precio de producto</string>
+    <string name="ingrese_dec_p">Ingrese descripcion del producto</string>
+    <string name="ingrese_img_p">Ingrese nombre de imagen de producto</string>
+
 </resources>

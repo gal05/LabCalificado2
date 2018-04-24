@@ -1,26 +1,38 @@
 package pe.edu.tecsup.guerra.labcalificado2.clases;
 
+import com.orm.dsl.Table;
+
 /**
  * Created by Alumno on 20/04/2018.
  */
-
+@Table
 public class Producto {
-
+    private Long id;
     private String nombre;
     private String precio;
     private String descripcion;
     private String imganes;
     private String etiqueta1;
+    private String owner;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String precio, String descripcion, String imganes, String etiqueta1) {
+    public Producto(String nombre, String precio, String descripcion, String imganes, String etiqueta1, String owner) {
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
         this.imganes = imganes;
         this.etiqueta1 = etiqueta1;
+        this.owner = owner;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -66,11 +78,13 @@ public class Producto {
     @Override
     public String toString() {
         return "Producto{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", precio='" + precio + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", imganes='" + imganes + '\'' +
                 ", etiqueta1='" + etiqueta1 + '\'' +
+                ", owner='" + owner + '\'' +
                 '}';
     }
 }
