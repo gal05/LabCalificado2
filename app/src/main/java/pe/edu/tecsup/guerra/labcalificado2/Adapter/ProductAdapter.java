@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pe.edu.tecsup.guerra.labcalificado2.R;
+import pe.edu.tecsup.guerra.labcalificado2.Repository.UserRepository;
 import pe.edu.tecsup.guerra.labcalificado2.clases.Producto;
 import pe.edu.tecsup.guerra.labcalificado2.clases.UsuarioLogeado;
 
@@ -32,7 +33,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public TextView description;
         public TextView label;
         public ImageView image;
-        public TextView wellcome;
+        public  TextView nombre_imagen;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -41,7 +42,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             description=(TextView) itemView.findViewById(R.id.desc_text);
             label=(TextView) itemView.findViewById(R.id.label_text);
             image=(ImageView) itemView.findViewById(R.id.picture_image);
-            wellcome=(TextView)itemView.findViewById(R.id.wellcomeUser);
+            nombre_imagen=(TextView)itemView.findViewById(R.id.jpg);
         }
     }
 
@@ -57,11 +58,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public void onBindViewHolder(ProductAdapter.ViewHolder holder, int position) {
         Producto productos=products.get(position);
 
-        holder.name.setText(productos.getNombre());
-        holder.price.setText(productos.getPrecio());
-        holder.description.setText(productos.getDescripcion());
-        holder.label.setText(String.valueOf(productos.getEtiqueta1()));
-        holder.wellcome.setText(String.valueOf(UsuarioLogeado.getLemeromero()));
+        holder.name.setText("name  " +productos.getNombre());
+        holder.price.setText("pre " + productos.getPrecio());
+        holder.description.setText("desc "+productos.getDescripcion());
+        holder.label.setText(String.valueOf("eti "+productos.getEtiqueta1()));
+        holder.nombre_imagen.setText("name_img "+String.valueOf(productos.getImganes()));
+       // holder.wellcome.setText("usuario"); esto no existe en el item_product :v
 
 
         int resID=holder.itemView.getContext().getResources().getIdentifier(productos.getImganes(),"drawable",holder.itemView.getContext().getPackageName());

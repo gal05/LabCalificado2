@@ -54,7 +54,7 @@ public class Examen1Activity extends AppCompatActivity {
             startActivity(i);*///pero mejor aun para salir de apuro estatico nomas XDDDDDDDDDDDDDDDDDDD
 
             startActivity(new Intent(this, Examen2Activity.class));
-            finish();
+
         }
    }
 

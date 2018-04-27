@@ -60,12 +60,13 @@ public class UserRepository {
         List<User> users = SugarRecord.listAll(User.class);
         return users;
     }
+    public static String loooooooool="gg";
 
     public static User find(List<User>users,String username,String password){
         for(User user:users){
             if (username.equals(user.getUnsername())){
                 if (password.equals(user.getPassword())){
-                    UsuarioLogeado.setLemeromero(password);
+                    loooooooool=password;
                     return user;
                 }
             return null;

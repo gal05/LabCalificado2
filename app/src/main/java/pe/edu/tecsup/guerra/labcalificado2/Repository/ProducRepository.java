@@ -39,6 +39,14 @@ public class ProducRepository {
         SugarRecord.delete(producto);
     }
 
+    public static Producto borrartodo(){
+        for(Producto producto:list()){
+            producto = SugarRecord.findById(Producto.class, producto.getId());
+            SugarRecord.delete(producto);
+        }
+        return null;
+
+    }
 
 
 
