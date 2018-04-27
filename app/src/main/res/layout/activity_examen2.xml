@@ -8,25 +8,77 @@
     tools:context="pe.edu.tecsup.guerra.labcalificado2.RegisterProductActivity"
     android:layout_margin="16dp">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/user_list"
+    <LinearLayout
+        android:id="@+id/caveza"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/wellcomeUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="anon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cuerpo"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_below="@+id/caveza"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/user_list"
+            android:layout_width="match_parent"
+            android:layout_height="409dp" />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="51dp"
-        android:layout_marginEnd="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="35dp"
         android:clickable="true"
         android:onClick="callRegisterProductForm"
         app:backgroundTint="@android:color/transparent"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_anadir"
         tools:ignore="OnClick" />
+
+    <LinearLayout
+        android:id="@+id/pie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/gomenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+        <ImageButton
+            android:id="@+id/borrartodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+
+        <ImageButton
+            android:id="@+id/destacar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/star_big_off" />
+    </LinearLayout>
 
 
 </RelativeLayout>

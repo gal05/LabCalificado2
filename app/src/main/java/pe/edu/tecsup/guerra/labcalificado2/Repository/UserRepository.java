@@ -6,12 +6,22 @@ import com.orm.util.NamingHelper;
 import java.util.List;
 
 import pe.edu.tecsup.guerra.labcalificado2.clases.User;
+import pe.edu.tecsup.guerra.labcalificado2.clases.UsuarioLogeado;
 
 /**
  * Created by Alumno on 20/04/2018.
  */
 
 public class UserRepository {
+    private static String elmeromero;
+
+    public static String getElmeromero() {
+        return elmeromero;
+    }
+
+    public static void setElmeromero(String elmeromero) {
+        UserRepository.elmeromero = elmeromero;
+    }
 
     public static List<User> list(){
         List<User> users = SugarRecord.listAll(User.class);
@@ -51,10 +61,14 @@ public class UserRepository {
         return users;
     }
 
-    public static User find(List<User>users,String username){
+    public static User find(List<User>users,String username,String password){
         for(User user:users){
             if (username.equals(user.getUnsername())){
-                return user;
+                if (password.equals(user.getPassword())){
+                    UsuarioLogeado.setLemeromero(password);
+                    return user;
+                }
+            return null;
             }
         }
         return null;

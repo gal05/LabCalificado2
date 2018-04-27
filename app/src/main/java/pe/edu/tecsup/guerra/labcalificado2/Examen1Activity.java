@@ -37,7 +37,7 @@ public class Examen1Activity extends AppCompatActivity {
 
         List<User> user_val = UserRepository.validar();
 
-        User encontrado=UserRepository.find(user_val,usern);
+        User encontrado=UserRepository.find(user_val,usern,pass);
 
 
 
@@ -46,9 +46,13 @@ public class Examen1Activity extends AppCompatActivity {
             return;
         }
         if (encontrado==null){
-            Toast.makeText(this, "Error en las credenciales"+encontrado, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
             return;
         }else{
+           /* Intent i=new Intent(this,Examen2Activity.class);
+            i.putExtra("owner",encontrado.getUnsername());
+            startActivity(i);*///pero mejor aun para salir de apuro estatico nomas XDDDDDDDDDDDDDDDDDDD
+
             startActivity(new Intent(this, Examen2Activity.class));
             finish();
         }

@@ -1,5 +1,6 @@
 package pe.edu.tecsup.guerra.labcalificado2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class RegisterProductActivity extends AppCompatActivity {
     private EditText priceProduct;
     private EditText descProduct;
     private EditText imgProduct;
+    private String propietario=UserRepository.getElmeromero();
 
 
     @Override
@@ -31,10 +33,6 @@ public class RegisterProductActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
     public void callRegisterProducto(View view){
         String nombre_prodcut = nameProduct.getText().toString();
         String precio_product = priceProduct.getText().toString();
@@ -45,8 +43,9 @@ public class RegisterProductActivity extends AppCompatActivity {
             Toast.makeText(this, "Deves completar todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
-        ProducRepository.create(nombre_prodcut,precio_product,desc_product, img_product);
-        finish();
+        ProducRepository.create(nombre_prodcut,precio_product,desc_product, img_product,propietario);
 
+        startActivity(new Intent(this, Examen2Activity.class));
+        finish();
     }
 }

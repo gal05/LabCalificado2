@@ -27,14 +27,6 @@ public class Producto {
         this.owner = owner;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -73,6 +65,14 @@ public class Producto {
 
     public void setEtiqueta1(String etiqueta1) {
         this.etiqueta1 = etiqueta1;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     @Override

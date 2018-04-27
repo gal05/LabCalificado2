@@ -11,6 +11,7 @@ import java.util.List;
 
 import pe.edu.tecsup.guerra.labcalificado2.R;
 import pe.edu.tecsup.guerra.labcalificado2.clases.Producto;
+import pe.edu.tecsup.guerra.labcalificado2.clases.UsuarioLogeado;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
@@ -31,6 +32,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         public TextView description;
         public TextView label;
         public ImageView image;
+        public TextView wellcome;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -39,6 +41,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             description=(TextView) itemView.findViewById(R.id.desc_text);
             label=(TextView) itemView.findViewById(R.id.label_text);
             image=(ImageView) itemView.findViewById(R.id.picture_image);
+            wellcome=(TextView)itemView.findViewById(R.id.wellcomeUser);
         }
     }
 
@@ -58,6 +61,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.price.setText(productos.getPrecio());
         holder.description.setText(productos.getDescripcion());
         holder.label.setText(String.valueOf(productos.getEtiqueta1()));
+        holder.wellcome.setText(String.valueOf(UsuarioLogeado.getLemeromero()));
 
 
         int resID=holder.itemView.getContext().getResources().getIdentifier(productos.getImganes(),"drawable",holder.itemView.getContext().getPackageName());

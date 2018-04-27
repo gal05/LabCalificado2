@@ -29,7 +29,7 @@ public class ProducRepository {
         producto.setPrecio(precio);
         producto.setDescripcion(desc);
         producto.setImganes(img);
-        producto.se
+
         //user.setEmail(email);
         SugarRecord.save(producto);
     }

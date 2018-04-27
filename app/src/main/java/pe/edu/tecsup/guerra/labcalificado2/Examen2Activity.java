@@ -10,14 +10,12 @@ import android.view.View;
 import java.util.List;
 
 import pe.edu.tecsup.guerra.labcalificado2.Adapter.ProductAdapter;
-import pe.edu.tecsup.guerra.labcalificado2.Adapter.UserAdapter;
 import pe.edu.tecsup.guerra.labcalificado2.Repository.ProducRepository;
-import pe.edu.tecsup.guerra.labcalificado2.Repository.UserRepository;
 import pe.edu.tecsup.guerra.labcalificado2.clases.Producto;
 
 public class Examen2Activity extends AppCompatActivity {
 
-    private static final int REGISTER_FORM_REQUEST = 100;
+    private static final int REGISTER_FORM_REQUEST = 110;
 
     private RecyclerView productList;
 
@@ -39,5 +37,6 @@ public class Examen2Activity extends AppCompatActivity {
 
     public void callRegisterProductForm(View view){
         startActivityForResult(new Intent(this, RegisterProductActivity.class), REGISTER_FORM_REQUEST);
+        finish();
     }
 }
